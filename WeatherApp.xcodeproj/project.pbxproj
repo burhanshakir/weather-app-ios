@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		1BF0A4BBE1226B9C413EA7D7 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77476C7EDA64950D13E6E7B5 /* Pods_WeatherApp.framework */; };
 		DF5A2853200CF71700CB031B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A2852200CF71700CB031B /* AppDelegate.swift */; };
-		DF5A2855200CF71700CB031B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A2854200CF71700CB031B /* ViewController.swift */; };
 		DF5A2858200CF71700CB031B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5A2856200CF71700CB031B /* Main.storyboard */; };
 		DF5A285A200CF71700CB031B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5A2859200CF71700CB031B /* Assets.xcassets */; };
 		DF5A285D200CF71700CB031B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5A285B200CF71700CB031B /* LaunchScreen.storyboard */; };
+		DF5A2869200D032300CB031B /* CurrentWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A2868200D032300CB031B /* CurrentWeatherVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +21,11 @@
 		77476C7EDA64950D13E6E7B5 /* Pods_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5A284F200CF71700CB031B /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5A2852200CF71700CB031B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DF5A2854200CF71700CB031B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DF5A2857200CF71700CB031B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF5A2859200CF71700CB031B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF5A285C200CF71700CB031B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF5A285E200CF71700CB031B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF5A2868200D032300CB031B /* CurrentWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,14 +78,38 @@
 		DF5A2851200CF71700CB031B /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				DF5A2867200CFBB300CB031B /* View */,
+				DF5A2866200CFBAA00CB031B /* Model */,
+				DF5A2865200CFB9C00CB031B /* Controller */,
 				DF5A2852200CF71700CB031B /* AppDelegate.swift */,
-				DF5A2854200CF71700CB031B /* ViewController.swift */,
 				DF5A2856200CF71700CB031B /* Main.storyboard */,
 				DF5A2859200CF71700CB031B /* Assets.xcassets */,
 				DF5A285B200CF71700CB031B /* LaunchScreen.storyboard */,
 				DF5A285E200CF71700CB031B /* Info.plist */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		DF5A2865200CFB9C00CB031B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF5A2868200D032300CB031B /* CurrentWeatherVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DF5A2866200CFBAA00CB031B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF5A2867200CFBB300CB031B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +235,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF5A2855200CF71700CB031B /* ViewController.swift in Sources */,
 				DF5A2853200CF71700CB031B /* AppDelegate.swift in Sources */,
+				DF5A2869200D032300CB031B /* CurrentWeatherVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
