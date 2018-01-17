@@ -21,13 +21,18 @@ class CurrentWeatherVC: UIViewController {
     
     @IBOutlet weak var weatherImage: UIImageView!
     
+    @IBOutlet weak var forecastTable: UITableView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
-        CurrentWeatherService.instance.getCurrentWeather{(success) in
+        let currentWeatherService = CurrentWeatherService.instance
+        let forecastService = ForecastWeatherService.instance
+        
+        currentWeatherService.getCurrentWeather{(success) in
             
             let currentWeather = CurrentWeatherService.instance.currentWeather
             
@@ -36,6 +41,10 @@ class CurrentWeatherVC: UIViewController {
             self.cityLabel.text = currentWeather.city
             self.weatherLabel.text = currentWeather.weather
             self.weatherImage.image = UIImage(named: currentWeather.weather)
+        }
+        
+        forecastService.getForecast { (success) in
+            
         }
     }
     

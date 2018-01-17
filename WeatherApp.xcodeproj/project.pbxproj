@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1BF0A4BBE1226B9C413EA7D7 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77476C7EDA64950D13E6E7B5 /* Pods_WeatherApp.framework */; };
+		DF08B44E200F6DEB003403EB /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF08B44D200F6DEB003403EB /* ForecastCell.swift */; };
+		DF08B450200F748A003403EB /* ForecastWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF08B44F200F748A003403EB /* ForecastWeatherService.swift */; };
+		DF08B452200F7643003403EB /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF08B451200F7643003403EB /* Forecast.swift */; };
 		DF5A2853200CF71700CB031B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A2852200CF71700CB031B /* AppDelegate.swift */; };
 		DF5A2858200CF71700CB031B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5A2856200CF71700CB031B /* Main.storyboard */; };
 		DF5A285A200CF71700CB031B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5A2859200CF71700CB031B /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 		3CA8F1E17DEE1E405E68D93D /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		7159F6773A8D010C846D7F69 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		77476C7EDA64950D13E6E7B5 /* Pods_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF08B44D200F6DEB003403EB /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		DF08B44F200F748A003403EB /* ForecastWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeatherService.swift; sourceTree = "<group>"; };
+		DF08B451200F7643003403EB /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		DF5A284F200CF71700CB031B /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5A2852200CF71700CB031B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF5A2857200CF71700CB031B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				DFA59E33200ED96200F0531B /* CurrentWeather.swift */,
+				DF08B451200F7643003403EB /* Forecast.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,6 +124,7 @@
 		DF5A2867200CFBB300CB031B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF08B44D200F6DEB003403EB /* ForecastCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				DFA59E38200EDA0B00F0531B /* CurrentWeatherService.swift */,
+				DF08B44F200F748A003403EB /* ForecastWeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -260,10 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF08B452200F7643003403EB /* Forecast.swift in Sources */,
 				DFA59E39200EDA0B00F0531B /* CurrentWeatherService.swift in Sources */,
 				DF5A2853200CF71700CB031B /* AppDelegate.swift in Sources */,
 				DF5A2869200D032300CB031B /* CurrentWeatherVC.swift in Sources */,
 				DFA59E34200ED96200F0531B /* CurrentWeather.swift in Sources */,
+				DF08B450200F748A003403EB /* ForecastWeatherService.swift in Sources */,
+				DF08B44E200F6DEB003403EB /* ForecastCell.swift in Sources */,
 				DFA59E2A200EC9E700F0531B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
