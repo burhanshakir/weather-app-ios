@@ -20,19 +20,14 @@ class ForecastCell: UITableViewCell {
     
     @IBOutlet weak var weatherImage: UIImageView!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-        
-        
+    func updateViews(forecast: Forecast)
+    {
+        let weather = forecast.weather ?? "Clear"
+        weatherImage.image = UIImage(named: weather)
+        weatherLabel.text = forecast.weather ?? "Clear"
+        minTempLabel.text = String(getTempInDegrees(temp: forecast.minTemperature))
+        maxTempLabel.text = String(getTempInDegrees(temp: forecast.maxTemperature))
+        dayLabel.text = getDay(dt: forecast.date)
     }
 
 }

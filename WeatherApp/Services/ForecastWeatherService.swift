@@ -24,9 +24,7 @@ class ForecastWeatherService{
             case .success(let value):
                 
                 let json = JSON(value)
-                
-                print(json)
-                
+                                
                 if let forecastList = json["list"].array{
                     
                     for item in forecastList{
