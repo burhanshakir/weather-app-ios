@@ -29,13 +29,30 @@ func getTempInDegrees(temp : Double) -> Double{
 func getDate(dt:Int) -> String{
     
     let date = Date(timeIntervalSince1970: TimeInterval(dt))
-    let dateFormatter = DateFormatter()
-    dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
-    dateFormatter.locale = NSLocale.current
-    dateFormatter.dateFormat = "EEEE, MMMM d, yyyy" //Specify your format that you want
-    let strDate = dateFormatter.string(from: date)
+    let todaysDate = Date(timeIntervalSince1970:TimeInterval(NSDate().timeIntervalSince1970))
     
-    return strDate
+    let dateFormatter = DateFormatter()
+    
+    dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+    
+    dateFormatter.locale = NSLocale.current
+    
+    
+    dateFormatter.dateFormat = "MMMM d, yyyy" //Specify your format that you want
+    
+    let strInputDate = dateFormatter.string(from: date)
+    let strCurrentDate = dateFormatter.string(from: todaysDate)
+    var result = ""
+    
+    if(strInputDate.elementsEqual(strCurrentDate)){ // Printing Today if todays date is equal to weather date
+        result = "Today, \(strInputDate)"
+    }
+    else{
+        dateFormatter.dateFormat = "EEEE, MMMM d, yyyy"
+        result = dateFormatter.string(from: date)
+    }
+    
+    return result
 }
 
 func getDay(dt:Int) -> String{
