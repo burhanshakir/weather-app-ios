@@ -87,6 +87,9 @@ class CurrentWeatherVC: UIViewController,UITableViewDataSource, UITableViewDeleg
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
         
+        let filter = GMSAutocompleteFilter()
+        filter.type = .city
+        
         let subView = UIView(frame: CGRect(x: 0, y: 20.0, width: 350.0, height: 45.0))
         
         subView.addSubview((searchController?.searchBar)!)
@@ -116,9 +119,9 @@ class CurrentWeatherVC: UIViewController,UITableViewDataSource, UITableViewDeleg
         
         let lat = place.coordinate.latitude
         let lon = place.coordinate.longitude
-        
-        let weatherURL = "\(BASE_URL)/weather?lat=\(lat)&lon=\(lon)&appid=\(APP_ID)"
-        let forecastURL = "\(BASE_URL)/forecast/daily?lat=\(lat)&lon=\(lon)&cnt=10&appid=\(APP_ID)"
+                
+        let weatherURL = "\(DYNAMIC_LOCATION_URL)/weather?lat=\(lat)&lon=\(lon)&appid=\(APP_ID)"
+        let forecastURL = "\(DYNAMIC_LOCATION_URL)/forecast?lat=\(lat)&lon=\(lon)&appid=\(APP_ID)"
         
         getData(weatherURL: weatherURL, forecastURL: forecastURL)
         

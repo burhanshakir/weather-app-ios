@@ -14,9 +14,10 @@ typealias CompletionHandler = (_ Success : Bool) -> ()
 // URL Constants
 
 let BASE_URL = "http://samples.openweathermap.org/data/2.5"
+let DYNAMIC_LOCATION_URL = "http://api.openweathermap.org/data/2.5"
 let WEATHER_PARAMETERS = "?lat=22.5726&lon=88.3639&appid=khwbacqbjerov"
 let FORECAST_PARAMETERS = "?lat=37.785834&lon=62.66&cnt=10&appid=khwbacqbjerov"
-let APP_ID = "khwbacqbjerov"
+let APP_ID = "ab7a26d0ad2e5bd4356c78fdc3eed914"
 
 
 let CURRENT_WEATHER_URL = "\(BASE_URL)/weather\(WEATHER_PARAMETERS)"
