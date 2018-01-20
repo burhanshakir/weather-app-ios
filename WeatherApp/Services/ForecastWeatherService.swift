@@ -16,9 +16,9 @@ class ForecastWeatherService{
     
     var forecasts = [Forecast]()
     
-    func getForecast(completion: @escaping CompletionHandler){
+    func getForecast(url : String!, completion: @escaping CompletionHandler){
         
-        Alamofire.request(FORECAST_URL, method: .get).validate().responseJSON { response in
+        Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result
             {
             case .success(let value):

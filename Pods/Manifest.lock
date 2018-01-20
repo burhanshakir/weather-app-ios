@@ -1,15 +1,31 @@
 PODS:
   - Alamofire (4.5.1)
+  - GoogleMaps (2.4.0):
+    - GoogleMaps/Maps (= 2.4.0)
+  - GoogleMaps/Base (2.4.0)
+  - GoogleMaps/Maps (2.4.0):
+    - GoogleMaps/Base
+  - GooglePlacePicker (2.4.0):
+    - GoogleMaps (= 2.4.0)
+    - GooglePlaces (= 2.4.0)
+  - GooglePlaces (2.4.0):
+    - GoogleMaps/Base (= 2.4.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire
+  - GoogleMaps
+  - GooglePlacePicker
+  - GooglePlaces
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
+  GooglePlacePicker: 755f10343d71280c7b016823e73fbae9625dfa8a
+  GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: f9e8681708d0d430e129046f493544392a4830fc
+PODFILE CHECKSUM: 2c3375bcf3152682e1ca31d5086e9f77017d8fa6
 
 COCOAPODS: 1.2.0

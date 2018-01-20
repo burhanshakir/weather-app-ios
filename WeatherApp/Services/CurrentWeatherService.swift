@@ -17,9 +17,9 @@ class CurrentWeatherService{
     
     var currentWeather = CurrentWeather()
     
-    func getCurrentWeather(completion : @escaping CompletionHandler)
+    func getCurrentWeather(url:String!, completion : @escaping CompletionHandler)
     {
-        Alamofire.request(CURRENT_WEATHER_URL, method: .get).validate().responseJSON { response in
+        Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result
             {
             case .success(let value):

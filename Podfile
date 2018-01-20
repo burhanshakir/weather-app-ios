@@ -10,5 +10,8 @@ target 'WeatherApp' do
   # Pods for WeatherApp
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
 
 end

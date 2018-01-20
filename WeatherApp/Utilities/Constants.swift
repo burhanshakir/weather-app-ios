@@ -14,12 +14,15 @@ typealias CompletionHandler = (_ Success : Bool) -> ()
 // URL Constants
 
 let BASE_URL = "http://samples.openweathermap.org/data/2.5"
-let WEATHER_PARAMETERS = "?lat=37.785834&lon=62.66&appid=khwbacqbjerov"
+let WEATHER_PARAMETERS = "?lat=22.5726&lon=88.3639&appid=khwbacqbjerov"
 let FORECAST_PARAMETERS = "?lat=37.785834&lon=62.66&cnt=10&appid=khwbacqbjerov"
+let APP_ID = "khwbacqbjerov"
 
 
 let CURRENT_WEATHER_URL = "\(BASE_URL)/weather\(WEATHER_PARAMETERS)"
 let FORECAST_URL = "\(BASE_URL)/forecast/daily\(FORECAST_PARAMETERS)"
+
+let GOOGLE_API_KEY = "AIzaSyAPt0sahQtfy0ansLIf-UkhmYb0FtVoqwA"
 
 func getTempInDegrees(temp : Double) -> Double{
     let celsius = round((temp - 273.15)*10/10)
