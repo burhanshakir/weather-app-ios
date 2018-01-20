@@ -121,7 +121,7 @@ class CurrentWeatherVC: UIViewController,UITableViewDataSource, UITableViewDeleg
         let lon = place.coordinate.longitude
                 
         let weatherURL = "\(DYNAMIC_LOCATION_URL)/weather?lat=\(lat)&lon=\(lon)&appid=\(APP_ID)"
-        let forecastURL = "\(DYNAMIC_LOCATION_URL)/forecast?lat=\(lat)&lon=\(lon)&appid=\(APP_ID)"
+        let forecastURL = "\(DYNAMIC_LOCATION_URL)/forecast?lat=\(lat)&lon=\(lon)&cnt=10&appid=\(APP_ID)"
         
         getData(weatherURL: weatherURL, forecastURL: forecastURL)
         
