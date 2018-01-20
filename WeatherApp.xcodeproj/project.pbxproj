@@ -16,6 +16,7 @@
 		DF5A285A200CF71700CB031B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5A2859200CF71700CB031B /* Assets.xcassets */; };
 		DF5A285D200CF71700CB031B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5A285B200CF71700CB031B /* LaunchScreen.storyboard */; };
 		DF5A2869200D032300CB031B /* CurrentWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A2868200D032300CB031B /* CurrentWeatherVC.swift */; };
+		DF67898B2013D68D00B2A092 /* DetailWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF67898A2013D68D00B2A092 /* DetailWeatherVC.swift */; };
 		DF78FC592011638500C5DA89 /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF78FC582011638500C5DA89 /* WeatherAppTests.swift */; };
 		DF78FC60201164A500C5DA89 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA59E29200EC9E600F0531B /* Constants.swift */; };
 		DFA59E2A200EC9E700F0531B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA59E29200EC9E600F0531B /* Constants.swift */; };
@@ -47,6 +48,7 @@
 		DF5A285C200CF71700CB031B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF5A285E200CF71700CB031B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF5A2868200D032300CB031B /* CurrentWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherVC.swift; sourceTree = "<group>"; };
+		DF67898A2013D68D00B2A092 /* DetailWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWeatherVC.swift; sourceTree = "<group>"; };
 		DF78FC562011638500C5DA89 /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF78FC582011638500C5DA89 /* WeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppTests.swift; sourceTree = "<group>"; };
 		DF78FC5A2011638600C5DA89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				DF5A2868200D032300CB031B /* CurrentWeatherVC.swift */,
+				DF67898A2013D68D00B2A092 /* DetailWeatherVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				DF5A2853200CF71700CB031B /* AppDelegate.swift in Sources */,
 				DF5A2869200D032300CB031B /* CurrentWeatherVC.swift in Sources */,
 				DFA59E34200ED96200F0531B /* CurrentWeather.swift in Sources */,
+				DF67898B2013D68D00B2A092 /* DetailWeatherVC.swift in Sources */,
 				DF08B450200F748A003403EB /* ForecastWeatherService.swift in Sources */,
 				DF08B44E200F6DEB003403EB /* ForecastCell.swift in Sources */,
 				DFA59E2A200EC9E700F0531B /* Constants.swift in Sources */,

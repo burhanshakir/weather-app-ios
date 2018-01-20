@@ -141,4 +141,16 @@ class CurrentWeatherVC: UIViewController,UITableViewDataSource, UITableViewDeleg
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let forecast = ForecastWeatherService.instance.forecasts[indexPath.row]
+        
+        performSegue(withIdentifier: "DetailWeatherVC", sender: forecast)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailWeatherVC = segue.destination as? DetailWeatherVC{
+            detailWeatherVC.forecast = sender as! Forecast
+        }
+    }
+    
 }
