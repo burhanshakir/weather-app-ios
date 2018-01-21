@@ -25,6 +25,9 @@ class CurrentWeatherVC: UIViewController,UITableViewDataSource, UITableViewDeleg
     var searchController: UISearchController?
     var resultView: UITextView?
     
+    var weatherURL = CURRENT_WEATHER_URL
+    var forecastURL = FORECAST_URL
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -38,10 +41,11 @@ class CurrentWeatherVC: UIViewController,UITableViewDataSource, UITableViewDeleg
         forecastTable.delegate = self
         forecastTable.rowHeight = 150.0
         
-        getData(weatherURL : CURRENT_WEATHER_URL, forecastURL : FORECAST_URL)
+        getData(weatherURL : weatherURL, forecastURL : forecastURL)
     
     }
     
+    // Service functions
     func getData(weatherURL : String, forecastURL : String ){
         currentWeatherService.getCurrentWeather(url: weatherURL){(success) in
             
@@ -56,6 +60,21 @@ class CurrentWeatherVC: UIViewController,UITableViewDataSource, UITableViewDeleg
         }
     }
     
+    func updateViews(currentWeather : CurrentWeather){
+        
+        
+        self.dateLabel.text = getDate(dt:currentWeather.date)
+        
+        self.tempLabel.text = String(getTempInDegrees(temp: currentWeather.temperature))
+        
+        self.cityLabel.text = currentWeather.city
+        self.weatherLabel.text = currentWeather.weather
+        self.weatherImage.image = UIImage(named: currentWeather.weather) ?? UIImage(named: "Partially Cloudy")
+        
+        
+    }
+    
+    // Table View Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return forecastService.forecasts.count
 
@@ -79,6 +98,13 @@ class CurrentWeatherVC: UIViewController,UITableViewDataSource, UITableViewDeleg
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let forecast = ForecastWeatherService.instance.forecasts[indexPath.row]
+        
+        performSegue(withIdentifier: "DetailWeatherVC", sender: forecast)
+    }
+    
+    // Google Places
     func initGooglePlacesSearch(){
         
         resultsViewController = GMSAutocompleteResultsViewController()
@@ -90,7 +116,7 @@ class CurrentWeatherVC: UIViewController,UITableViewDataSource, UITableViewDeleg
         let filter = GMSAutocompleteFilter()
         filter.type = .city
         
-        let subView = UIView(frame: CGRect(x: 0, y: 20.0, width: 350.0, height: 45.0))
+        let subView = UIView(frame: CGRect(x: 0, y: 30.0, width: 350.0, height: 45.0))
         
         subView.addSubview((searchController?.searchBar)!)
         view.addSubview(subView)
@@ -99,20 +125,7 @@ class CurrentWeatherVC: UIViewController,UITableViewDataSource, UITableViewDeleg
         
         definesPresentationContext = true
     }
-    
-    func updateViews(currentWeather : CurrentWeather){
-        
-        self.dateLabel.text = getDate(dt:currentWeather.date)
-        
-        self.tempLabel.text = String(getTempInDegrees(temp: currentWeather.temperature))
-        
-        self.cityLabel.text = currentWeather.city
-        self.weatherLabel.text = currentWeather.weather
-        self.weatherImage.image = UIImage(named: currentWeather.weather)
-        
-        
-    }
-    
+   
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
         
         searchController?.isActive = false
@@ -120,8 +133,8 @@ class CurrentWeatherVC: UIViewController,UITableViewDataSource, UITableViewDeleg
         let lat = place.coordinate.latitude
         let lon = place.coordinate.longitude
                 
-        let weatherURL = "\(DYNAMIC_LOCATION_URL)/weather?lat=\(lat)&lon=\(lon)&appid=\(APP_ID)"
-        let forecastURL = "\(DYNAMIC_LOCATION_URL)/forecast?lat=\(lat)&lon=\(lon)&cnt=10&appid=\(APP_ID)"
+        weatherURL = "\(DYNAMIC_LOCATION_URL)/weather?lat=\(lat)&lon=\(lon)&appid=\(APP_ID)"
+        forecastURL = "\(DYNAMIC_LOCATION_URL)/forecast?lat=\(lat)&lon=\(lon)&cnt=10&appid=\(APP_ID)"
         
         getData(weatherURL: weatherURL, forecastURL: forecastURL)
         
@@ -140,17 +153,16 @@ class CurrentWeatherVC: UIViewController,UITableViewDataSource, UITableViewDeleg
     func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let forecast = ForecastWeatherService.instance.forecasts[indexPath.row]
-        
-        performSegue(withIdentifier: "DetailWeatherVC", sender: forecast)
-    }
-    
+  
+    // Segue functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailWeatherVC = segue.destination as? DetailWeatherVC{
             detailWeatherVC.forecast = sender as! Forecast
         }
+    }
+    
+    @IBAction func unwindFromDetailWeatherVC(unwindsegue: UIStoryboardSegue){
+        
     }
     
 }

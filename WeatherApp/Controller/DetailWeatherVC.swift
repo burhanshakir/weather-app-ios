@@ -11,23 +11,12 @@ import UIKit
 class DetailWeatherVC: UIViewController {
     
     @IBOutlet weak var cityLabel: UILabel!
-    
     @IBOutlet weak var dateLabel: UILabel!
-    
     @IBOutlet weak var descriptionLabel: UILabel!
-    
     @IBOutlet weak var weatherImage: UIImageView!
-    
-    
     @IBOutlet weak var temperatureLabel: UILabel!
-    
-    
     @IBOutlet weak var humidityLable: UILabel!
-    
-    
     @IBOutlet weak var pressureLabel: UILabel!
-    
-    
     @IBOutlet weak var windLabel: UILabel!
     
     public var forecast: Forecast!
@@ -49,8 +38,8 @@ class DetailWeatherVC: UIViewController {
         weatherImage.image = UIImage(named: forecast.weather)
         temperatureLabel.text = "\(String(getTempInDegrees(temp: forecast.minTemperature))) C"
         humidityLable.text = "\(String(forecast.humidity))%"
-        pressureLabel.text = "\(String(forecast.pressure))hPa"
-        windLabel.text = "\(String(forecast.wind * 3.6))Kmh"
+        pressureLabel.text = "\(String(format: "%.0f",forecast.pressure))hPa"
+        windLabel.text = "\(String(format: "%.2f",forecast.wind * 3.6))Kmh"
         
     }
 }
